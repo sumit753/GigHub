@@ -7,22 +7,25 @@
 <h2>Add a Gig</h2>
 
 @using (Html.BeginForm("Create", "Gig"))
-{       //Preventing it from CSRF attack
+{
+    
+     <p class="alert alert-info">All Fields are <strong>Required</strong> </p>
+    //Preventing it from CSRF attack
      @Html.AntiForgeryToken()  
     <div class="form-group">
         @Html.LabelFor(m => m.Venue)
-        @Html.TextBoxFor(m => m.Venue, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m=> m.Venue)
+        @Html.TextBoxFor(m => m.Venue, new { @class = "form-control" ,autofocus="autofocus"})
+        @Html.ValidationMessageFor(m => m.Venue)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Date)
-        @Html.TextBoxFor(m => m.Date, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control" ,placeholder="eg- 1 Jan 2015"})
         @Html.ValidationMessageFor(m => m.Date)
 
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Time)
-        @Html.TextBoxFor(m => m.Time, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Time, new { @class = "form-control" ,placeholder ="eg- 13:02"})
         @Html.ValidationMessageFor(m => m.Time)
 
     </div>
