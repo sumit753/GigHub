@@ -8,6 +8,7 @@ namespace GigHub.Models
         public DbSet<Gig> Gig { get; set; }
         public DbSet<Genre> Genre { get; set; }
         public DbSet<Attendance> Attendance { get; set; }
+        public DbSet<Following> Following { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -26,7 +27,22 @@ namespace GigHub.Models
                 .HasRequired(a => a.Gig)
                 .WithMany()
                 .WillCascadeOnDelete(false);
+
+
+            //for "Follow Button". We need to remove two way Cascade
+
+            modelBuilder.Entity<ApplicationUser>()
+                .HasMany(u => u.Followers)
+                .WithRequired(a => a.Followee)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ApplicationUser>()
+                .HasMany(u => u.Followees)
+                .WithRequired(a => a.Follower)
+                .WillCascadeOnDelete(false);
+
             base.OnModelCreating(modelBuilder);
+
         }
     }
 }
