@@ -31,8 +31,7 @@
 @section scripts
 {
     <script>
-        $(document).ready(function()
-        {  
+        $(document).ready(function () {
             $(".js-toggle-attendance").click(function (e) {
                 var Button = $(e.target);
                 $.post("/api/attendances", { gigID: Button.attr("data-gig-id") })
@@ -44,17 +43,17 @@
 
             });
 
-            //$(".js-toggle-follow").click(function (e)
-            //{
-            //    var Button = $(e.target);
-            //    $.post("/api/following",{FolloweeID : Button.attr("data-user-id")})
-            //    .done(function(){
-            //        Button.text("Following");
-            //    })
-            //    .fail(function(){
-            //    alert("Something Went Wrong")
-            //}); 
-        
-        }
+            $(".js-toggle-follow").click(function (e) {
+                var Button = $(e.target);
+                $.post("/api/following", { FolloweeID: Button.attr("data-user-id") })
+                .done(function () {
+                    Button.text("Following");
+                })
+                .fail(function () {
+                    alert("Something Went Wrong")
+                });
+            });
+
+        });
     </script>
 }
