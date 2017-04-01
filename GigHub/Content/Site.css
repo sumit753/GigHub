@@ -28,8 +28,15 @@ span.field-validation-error {
     font-weight: bold;
 }
 
+
+
 /*Custom Css*/
 /*#region CustomCss */
+.voffset{margin-top:4px;}
+.voffset1{margin-top:6px;}
+.voffset2{margin-top:8px;}
+.voffset3{margin-top:10px;}
+.voffset4{margin-top:12px;}
 .gigs {
     list-style:none;
 }
@@ -69,4 +76,8 @@ span.field-validation-error {
     }
  
 /*#endregion */
+
+
+
+
 
