@@ -67,14 +67,35 @@ span.field-validation-error {
     padding:2px 6px;
     border-radius:6px;
     }
-    .gigs > li .details .artist {
+.gigs > li .details .artist {
         display:block;
         font-weight:bold;
     }
-    .gigs > li .details .genre {
+ .gigs > li .details .genre {
         font-size:15px;
     }
+.gigs > li .actions {
+        display:none;
+        font-size:15px;
+    }
+
+    .gigs > li:hover .actions {
+    display:block;
+    }
  
+/*#endregion */
+
+/*#region Bootstrap */
+
+.form-control {
+    font-size:17px;
+    height : 44px;
+    border-radius:9px;
+}
+.form-group{
+    margin-bottom:20px;
+}
+
 /*#endregion */
 
 

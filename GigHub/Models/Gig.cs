@@ -7,6 +7,7 @@ namespace GigHub.Models
     {
         public int Id { get; set; }
 
+        public bool isCanceled { get; set; }
 
         public ApplicationUser Artist { get; set; }
 

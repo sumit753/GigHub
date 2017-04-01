@@ -1,17 +1,18 @@
 ﻿@model GigHub.ViewModel.GigFormViewModel
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = Model.Heading;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Add a Gig</h2>
+<h2>@Model.Heading</h2>
 
-@using (Html.BeginForm("Create", "Gig"))
+@using (Html.BeginForm(Model.Action, "Gig"))
 {
     
      <p class="alert alert-info">All Fields are <strong>Required</strong> </p>
     //Preventing it from CSRF attack
      @Html.AntiForgeryToken()  
+     @Html.HiddenFor(m => m.Id)
     <div class="form-group">
         @Html.LabelFor(m => m.Venue)
         @Html.TextBoxFor(m => m.Venue, new { @class = "form-control" ,autofocus="autofocus"})
