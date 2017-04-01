@@ -28,5 +28,7 @@ namespace GigHub.Controllers
 
             return View(artist);
         }
+
+
     }
 }

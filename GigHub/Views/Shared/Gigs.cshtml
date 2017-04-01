@@ -22,18 +22,18 @@
                     {
                         <button class="btn btn-link btn-sm js-toggle-follow" data-user-id="@gig.ArtistId">Follow</button>
                     }
-                    </span>
-                    <span class="genre">
-                        @gig.Genre.Name
-                    </span>
-                    @if (Model.showActions)
-                    {
-                        <button data-gig-id="@gig.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
-                    }
-                </div>
-            </li>
-                    }
-                </ul>
+                </span>
+                <span class="genre">
+                    @gig.Genre.Name
+                </span>
+                @if (Model.showActions)
+                {
+                    <button data-gig-id="@gig.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
+                }
+            </div>
+        </li>
+    }
+</ul>
 
 
 
