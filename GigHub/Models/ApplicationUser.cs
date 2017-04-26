@@ -19,12 +19,13 @@ namespace GigHub.Models
         //to add "Following Button"
         public ICollection<Following> Followers { get; set; }
         public ICollection<Following> Followees { get; set; }
-
+        public ICollection<UserNotification> UserNotifications { get; set; }
         //whenever we use Collection we need to intialize it in class constructor
         public ApplicationUser()
         {
             Followers = new Collection<Following>();
             Followees = new Collection<Following>();
+            UserNotifications = new Collection<UserNotification>();
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -33,6 +34,16 @@ namespace GigHub.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
             return userIdentity;
+        }
+
+        internal void Notify(Notification notification)
+        {
+            var userNotification = new UserNotification(this, notification);
+
+            //Whenever we add a object to collection,Entity framework 
+            //Automatically identifies it & perform the INSERT operation.
+
+            UserNotifications.Add(userNotification);
         }
     }
 

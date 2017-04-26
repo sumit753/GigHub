@@ -1,7 +1,6 @@
 ﻿body {
     padding-top: 90px;
     padding-bottom: 20px;
-    font-size:17px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -23,82 +22,143 @@ select,
 textarea {
     max-width: 280px;
 }
+
 span.field-validation-error {
     color: red;
     font-weight: bold;
 }
 
+.voffset { margin-top: 2px; }
+.voffset1 { margin-top: 5px; }
+.voffset2 { margin-top: 10px; }
+.voffset3 { margin-top: 20px; }
+.voffset4 { margin-top: 40px; }
+.voffset5 { margin-top: 80px; }
+
+/* Bootstrap Overrides */
+.navbar-inverse {
+    background-color: #ff4342;
+    border-color: #ff4342;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: rgba(205, 40, 39, 0.55);
+}
+
+.dropdown-menu {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+
+.navbar-brand {
+    font-weight: 700;    
+}
+
+body {
+    font-size: 17px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    font-size: 17px;
+    height: 44px;
+    -ms-border-radius: 9px;
+    border-radius: 9px;
+}
 
 
-/*Custom Css*/
-/*#region CustomCss */
-.voffset{margin-top:4px;}
-.voffset1{margin-top:6px;}
-.voffset2{margin-top:8px;}
-.voffset3{margin-top:10px;}
-.voffset4{margin-top:12px;}
+.btn {
+    /*font-size: 17px;
+    padding: 7px 20px;*/
+    -ms-border-radius: 9px;
+    border-radius: 9px;
+}
+
+/* Page-level styles */
 .gigs {
-    list-style:none;
+    list-style: none;
 }
 
-.gigs > li{
-    position:relative;
-    margin-bottom:30px;
+.gigs > li {
+    position: relative;
+    margin-bottom: 30px;
 }
 
-.gigs >li .details{
-    position:absolute;
-    left:70px;
-    top:0;
-}
-
-.gigs >li .date{
-        
-    text-align:center;
-    width:60px;
+.gigs > li .date {
+    background: red;
+    color: white;
+    text-align: center;
+    width: 60px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
 }
 
 .gigs > li .date .month {
-    background:black;
-    color:white;
-    text-transform:uppercase;
-    font-size:14px;
-    font-weight:bold;
-    padding:2px 6px;
-    border-radius:6px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 6px;
+}
+
+    .gigs > li .date .day {
+        background: #f7f7f7;
+        color: #333;
+        font-size: 20px;
+        padding: 6px 12px;
     }
-.gigs > li .details .artist {
-        display:block;
-        font-weight:bold;
+
+.gigs > li .details {
+    position: absolute;
+    top: 0;
+    left: 70px;    
+}
+
+    .gigs > li .details .artist {
+        font-weight: bold;
+        display: block;
     }
- .gigs > li .details .genre {
-        font-size:15px;
+
+    .gigs > li .details .genre {
+        font-size: 15px;
     }
+
 .gigs > li .actions {
-        display:none;
-        font-size:15px;
-    }
-
-    .gigs > li:hover .actions {
-    display:block;
-    }
- 
-/*#endregion */
-
-/*#region Bootstrap */
-
-.form-control {
-    font-size:17px;
-    height : 44px;
-    border-radius:9px;
-}
-.form-group{
-    margin-bottom:20px;
+    font-size: 15px;
+    display: none;
 }
 
-/*#endregion */
-
-
-
-
-
+.gigs > li:hover .actions {
+    display: block;
+}
