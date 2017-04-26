@@ -16,7 +16,7 @@ namespace GigHub.Models
 
         public ApplicationUser User { get; private set; }
         public Notification Notification { get; private set; }
-        public bool isRead { get; set; }
+        public bool isRead { get; private set; }
 
         public UserNotification()
         {
@@ -34,6 +34,11 @@ namespace GigHub.Models
             User = user;
             Notification = notification;
 
+        }
+
+        public void Read()
+        {
+            isRead = true;
         }
     }
 }

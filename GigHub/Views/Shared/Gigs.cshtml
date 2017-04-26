@@ -3,6 +3,20 @@
     ViewBag.Title = Model.Heading;
 }
 <h1>@Model.Heading</h1>
+
+@using (Html.BeginForm("Search", "Gig"))
+{
+   <div class="form-group">
+       <div class="input-group" style="width: 300px">
+               @Html.TextBoxFor(s => s.SearchTerm,new { @class="form-control"})
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </span>
+       </div>
+   </div> 
+
+}
+
 <ul class="gigs voffset2">
     @foreach (var gig in Model.UpcommingGigs)
     {
@@ -32,7 +46,7 @@
                 }
             </div>
         </li>
-    }
+        }
 </ul>
 
 

@@ -6,7 +6,6 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
 
-
 namespace GigHub.Controllers.Api
 {
     [Authorize]
@@ -55,6 +54,20 @@ namespace GigHub.Controllers.Api
 
 
 
+        }
+
+        [HttpPost]
+        public IHttpActionResult MarkAsRead()
+        {
+            var userId = User.Identity.GetUserId();
+
+            var notifications = _context.UserNotifications.Where(un => un.userID == userId && !un.isRead).ToList();
+
+            notifications.ForEach(un => un.Read());
+
+            _context.SaveChanges();
+
+            return Ok();
         }
     }
 }
